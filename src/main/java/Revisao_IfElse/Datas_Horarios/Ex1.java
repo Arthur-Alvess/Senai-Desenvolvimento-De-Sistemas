@@ -12,7 +12,7 @@ public class Ex1 {
         if (hora > 24){
             System.out.println("\nHora inválida");
         }else{
-            System.out.println("\nHora válida");
+            System.out.println("\nHora válida.");
         }
     }
 }
