@@ -1,6 +1,6 @@
-package Revisão_Math_e_Expressões_Aritimeticas.MathPow;
+package Revisao_Math_e_Expressoes_Aritimeticas.MathPow;
 
-public class MathPow {
+public class Exercicio {
     public static void main(String[] args) {
         double [][] num = {{2,3},{5,2},{10,0},{3,4},{7,2},{2,10},{0.5,2},{1,100},{4,0.5},{-2,3}, {6,3},{8,2},{-3,2},{9,0.5},{2,-3},{0.1,2},{100,0.5},{10,-2},{-1,3},{0,5}};
 

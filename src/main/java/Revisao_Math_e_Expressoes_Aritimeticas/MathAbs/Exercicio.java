@@ -1,6 +1,6 @@
-package Revisão_Math_e_Expressões_Aritimeticas;
+package Revisao_Math_e_Expressoes_Aritimeticas.MathAbs;
 
-public class MathAbs {
+public class Exercicio {
     public static void main(String[] args) {
         double [] num = {-10, 15, 0, -5.5, -100, -0.1, -1234, 3.1415, -999,
         -1, -25, 50, -0.5, -2.718, -777, -100000, -0.0001, 42, -8.8, -500};

@@ -1,6 +1,6 @@
-package Revisão_Math_e_Expressões_Aritimeticas.Expressoes;
+package Revisao_Math_e_Expressoes_Aritimeticas.Expressoes;
 
-public class Expressoes_Aritmeticas {
+public class Exercicio {
     public static void main(String[] args) {
 
         double[] expressions = {
