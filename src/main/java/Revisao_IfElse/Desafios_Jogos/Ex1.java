@@ -18,5 +18,7 @@ public class Ex1 {
         } else {
             System.out.println("\nOs números possuem sianis diferentes");
         }
+        sc.close();
+
     }
 }

@@ -16,5 +16,7 @@ public class Ex2 {
         } else {
             System.out.println("\n" + num1 + " é não é maior que o dobro de " + num2);
         }
+        sc.close();
+
     }
 }

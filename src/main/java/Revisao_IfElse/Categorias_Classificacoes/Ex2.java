@@ -21,6 +21,8 @@ public class Ex2 {
         } else {
             System.out.println("\nNúmero inválido!");
         }
+        sc.close();
+
     }
 }
 

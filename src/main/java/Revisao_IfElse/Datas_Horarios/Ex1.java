@@ -14,5 +14,7 @@ public class Ex1 {
         }else{
             System.out.println("\nHora válida.");
         }
+        sc.close();
+
     }
 }

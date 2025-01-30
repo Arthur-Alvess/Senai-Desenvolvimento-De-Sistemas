@@ -21,6 +21,8 @@ public class Ex4 {
         } else {
             System.out.println("\nPressão Arterial Alta");
         }
+        sc.close();
+
     }
 }
 

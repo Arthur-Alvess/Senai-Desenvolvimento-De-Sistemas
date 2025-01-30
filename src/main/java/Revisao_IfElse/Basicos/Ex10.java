@@ -14,5 +14,7 @@ public class Ex10 {
         }else {
             System.out.println("O número digitado não está entre 100 e 200");
         }
+        sc.close();
+
     }
 }

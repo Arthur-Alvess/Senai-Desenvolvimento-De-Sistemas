@@ -28,5 +28,7 @@ public class Ex3 {
         } else {
             System.out.println(nota3 + " á a menor nota!");
         }
+        sc.close();
+
     }
 }

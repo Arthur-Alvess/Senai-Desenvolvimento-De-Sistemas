@@ -14,5 +14,7 @@ public class Ex8 {
         } else {
             System.out.println(letra + " é uma consoante");
         }
+        sc.close();
+
     }
 }

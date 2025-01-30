@@ -22,5 +22,7 @@ public class Ex1 {
         } else {
             System.out.println("\nA soma dos números informados é menor ou igual a 100");
         }
+        sc.close();
+
     }
 }

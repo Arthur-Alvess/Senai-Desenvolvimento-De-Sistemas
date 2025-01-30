@@ -21,6 +21,6 @@ public class Ex3 {
         } else {
             System.out.println("Os números informados não são divisiveis um pelo outro");
         }
+        sc.close();
     }
 }
-

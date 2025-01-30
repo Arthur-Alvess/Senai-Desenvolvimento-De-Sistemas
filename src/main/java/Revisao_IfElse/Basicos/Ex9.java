@@ -14,5 +14,7 @@ public class Ex9 {
         }else {
             System.out.println("O número digitado não está entre 10 e 50");
         }
+        sc.close();
+
     }
 }

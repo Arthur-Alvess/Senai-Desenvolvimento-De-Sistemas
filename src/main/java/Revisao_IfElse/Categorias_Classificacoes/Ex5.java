@@ -16,5 +16,7 @@ public class Ex5 {
         } else {
             System.out.println("\nEstá calor");
         }
+        sc.close();
+
     }
 }

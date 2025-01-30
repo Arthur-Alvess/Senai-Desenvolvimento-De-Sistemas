@@ -24,5 +24,7 @@ public class Ex2 {
         } else {
             System.out.println("\nValor da Compra: R$" + valor);
         }
+        sc.close();
+
     }
 }

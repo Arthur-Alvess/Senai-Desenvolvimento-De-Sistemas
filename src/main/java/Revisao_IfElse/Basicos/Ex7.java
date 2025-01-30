@@ -14,5 +14,7 @@ public class Ex7 {
         }else {
             System.out.println(num + " não é multiplo por 5!");
         }
+        sc.close();
+
     }
 }

@@ -26,5 +26,7 @@ public class Ex4 {
         } else {
             System.out.println("\n" + num3 + ", "+ num1 + ", "+ num2);
         }
+        sc.close();
+
     }
 }

@@ -19,5 +19,7 @@ public class Ex3 {
         } else {
             System.out.println("\nVocê é alto");
         }
+        sc.close();
+
     }
 }

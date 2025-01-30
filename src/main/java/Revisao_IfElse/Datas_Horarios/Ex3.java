@@ -18,5 +18,7 @@ public class Ex3 {
         } else {
             System.out.println("\nDia digitado inválido");
         }
+        sc.close();
+
     }
 }

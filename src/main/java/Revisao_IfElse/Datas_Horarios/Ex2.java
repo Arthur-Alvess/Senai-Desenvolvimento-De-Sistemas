@@ -14,5 +14,7 @@ public class Ex2 {
         }else{
             System.out.println("\nMês válido");
         }
+        sc.close();
+
     }
 }

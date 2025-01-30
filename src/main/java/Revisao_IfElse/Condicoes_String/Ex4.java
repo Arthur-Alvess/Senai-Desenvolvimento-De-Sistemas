@@ -17,5 +17,7 @@ public class Ex4 {
         }else{
             System.out.println(palavra + " não contém mais de 5 caracteres");
         }
+        sc.close();
+
     }
 }

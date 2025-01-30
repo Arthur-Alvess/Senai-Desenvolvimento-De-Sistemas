@@ -18,5 +18,7 @@ public class Ex3 {
         }while(tent != numsecret);
 
         System.out.println("\nParabéns, você adivinhou o número secreto!");
+        sc.close();
+
     }
 }

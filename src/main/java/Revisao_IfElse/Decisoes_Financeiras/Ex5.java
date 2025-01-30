@@ -14,6 +14,8 @@ public class Ex5 {
         } else {
             System.out.println("\nValor mínimo para brinde não atingido");
         }
+        sc.close();
+
     }
 }
 

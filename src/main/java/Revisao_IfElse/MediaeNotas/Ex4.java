@@ -27,5 +27,7 @@ public class Ex4 {
         if (nota2 == 10){
             System.out.println("Tirou nota máxima na 2ª nota");
         }
+        sc.close();
+
     }
 }

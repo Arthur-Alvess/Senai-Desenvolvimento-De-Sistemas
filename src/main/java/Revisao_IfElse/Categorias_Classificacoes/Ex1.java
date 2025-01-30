@@ -21,5 +21,7 @@ public class Ex1 {
         } else {
             System.out.println("Você é um idoso");
         }
+        sc.close();
+
     }
 }

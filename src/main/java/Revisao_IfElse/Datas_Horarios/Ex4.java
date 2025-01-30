@@ -18,5 +18,7 @@ public class Ex4 {
         } else {
             System.out.println("\nHorário Inválido");
         }
+        sc.close();
+
     }
 }

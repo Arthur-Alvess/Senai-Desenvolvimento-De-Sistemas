@@ -3,6 +3,7 @@ package Revisao_IfElse.Basicos;
 import java.util.Scanner;
 
 public class Ex6 {
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -20,6 +21,8 @@ public class Ex6 {
         if (ano % 4 == 0){
             System.out.println(ano+" é um ano bissexto!");
         }
+        sc.close();
+
     }
 }
 

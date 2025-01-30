@@ -16,5 +16,7 @@ public class Ex3 {
         } else {
             System.out.println("Você não pode financiar um imóvel");
         }
+        sc.close();
+
     }
 }

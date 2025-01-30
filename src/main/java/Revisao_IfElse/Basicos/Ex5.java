@@ -20,5 +20,7 @@ public class Ex5 {
         } else {
             System.out.println(num3 + " é o maior número digitado!");
         }
+        sc.close();
+
     }
 }

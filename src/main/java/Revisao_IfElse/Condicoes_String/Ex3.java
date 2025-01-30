@@ -17,6 +17,8 @@ public class Ex3 {
         } else {
             System.out.println("A palavra digitada não começa com a letra 'A'");
         }
+        sc.close();
+
     }
 }
 

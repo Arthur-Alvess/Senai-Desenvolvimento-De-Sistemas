@@ -24,6 +24,8 @@ public class Ex2 {
         } else {
             System.out.println("\nNão há diferença entre os números");
         }
+        sc.close();
+
     }
 }
 

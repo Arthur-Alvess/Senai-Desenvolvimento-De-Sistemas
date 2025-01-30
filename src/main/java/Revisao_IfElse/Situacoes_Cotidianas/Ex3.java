@@ -1,4 +1,4 @@
-package Situacoes_Cotidianas;
+package Revisao_IfElse.Situacoes_Cotidianas;
 
 import java.util.Scanner;
 

@@ -21,5 +21,7 @@ public class Ex4 {
         } else {
             System.out.println("\nVocê não pode parcelar este produto");
         }
+        sc.close();
+
     }
 }

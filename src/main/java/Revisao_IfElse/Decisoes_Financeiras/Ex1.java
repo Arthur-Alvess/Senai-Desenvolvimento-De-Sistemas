@@ -16,5 +16,7 @@ public class Ex1 {
         } else {
             System.out.println("\nSaldo insuficiente para realizar um saque");
         }
+        sc.close();
+
     }
 }

@@ -15,5 +15,7 @@ public class Ex1 {
         } else {
             System.out.println(num + " é um número negativo");
         }
+        sc.close();
+
     }
 }

@@ -19,6 +19,8 @@ public class Ex5 {
         }else{
             System.out.println("As palavras digitadas são diferentes!");
         }
+        sc.close();
+
     }
 }
 

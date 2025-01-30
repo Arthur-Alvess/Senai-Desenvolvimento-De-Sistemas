@@ -17,5 +17,7 @@ public class Ex5 {
         } else {
             System.out.println("\nA data informada está fora do periodo");
         }
+        sc.close();
+
     }
 }
