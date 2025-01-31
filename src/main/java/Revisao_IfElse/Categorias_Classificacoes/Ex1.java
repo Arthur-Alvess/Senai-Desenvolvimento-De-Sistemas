@@ -11,7 +11,6 @@ public class Ex1 {
         System.out.print("Informe sua idade: ");
         int idade = sc.nextInt();
 
-
         if (idade <=12) {
             System.out.println("Você é uma criança");
         } else if (idade <18) {
