@@ -1,4 +1,3 @@
-package Exercicios_Laco_For;
 
 import java.util.Scanner;
 
@@ -12,5 +11,6 @@ public class For9 {
         for (int i = 0; i <= 10; i++){
             System.out.printf("\n%d x %d = %d", num, i, num*i);
         }
+        sc.close();
     }
 }

@@ -1,4 +1,3 @@
-package Exercicios_Laco_For;
 
 public class For6 {
     public static void main(String[] args) {

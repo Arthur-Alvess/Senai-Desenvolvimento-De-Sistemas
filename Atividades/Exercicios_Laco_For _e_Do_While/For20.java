@@ -1,9 +1,8 @@
-package Exercicios_Laco_For;
-
-public class For3 {
+public class For20 {
     public static void main(String[] args) {
-        for (int i = 2; i <= 20; i += 2){
+        for (int i = 1; i <=50; i += 5){
             System.out.println(i);
         }
     }
+
 }
