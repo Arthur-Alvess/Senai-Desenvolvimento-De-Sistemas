@@ -15,5 +15,6 @@ public class While12 {
             System.out.print(palavra.charAt(cont));
             cont--;
         }while(cont >= 0);
+        sc.close();
     }
 }

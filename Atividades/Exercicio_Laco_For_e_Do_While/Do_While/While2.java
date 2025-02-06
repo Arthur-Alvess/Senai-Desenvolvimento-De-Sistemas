@@ -23,5 +23,7 @@ public class While2 {
         }while(true);
 
         System.out.println("A soma dos números informados é " +soma );
+
+        sc.close();
     }
 }

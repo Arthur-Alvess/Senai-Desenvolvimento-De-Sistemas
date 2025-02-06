@@ -18,5 +18,6 @@ public class While10 {
             }
         }while(true);
         System.out.println("A quantidade de números positivos digitados foi: "+ cont);
+        sc.close();
     }
 }

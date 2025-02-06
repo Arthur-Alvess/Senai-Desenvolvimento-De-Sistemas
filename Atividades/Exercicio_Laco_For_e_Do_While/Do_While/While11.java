@@ -17,5 +17,6 @@ public class While11 {
             System.out.print(palavra.charAt(cont)+"  ");
             cont++;
         }while(cont < palavra.length());
+        sc.close();
     }
 }

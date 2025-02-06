@@ -17,5 +17,6 @@ public class While13 {
             cont++;
         }while(cont < num.length());
         System.out.println("\nA soma dos algarismos do número informado é: " + soma);
+        sc.close();
     }
 }

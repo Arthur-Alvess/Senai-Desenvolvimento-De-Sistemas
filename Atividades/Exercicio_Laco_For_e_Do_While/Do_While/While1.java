@@ -22,5 +22,7 @@ public class While1 {
         }while(num >=0);
 
         System.out.println(lista);
+
+        sc.close();
     }
 }

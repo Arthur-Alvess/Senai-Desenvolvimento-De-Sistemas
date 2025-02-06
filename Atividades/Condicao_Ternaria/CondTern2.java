@@ -8,6 +8,8 @@ public class CondTern2 {
 
         System.out.print("Informe sua idade: ");
         int idade = sc.nextInt();
+
+        sc.close();
         
         System.out.println((idade >= 18) ? "\nMaior de idade" : "\nMenor de idade");
 
