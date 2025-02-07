@@ -12,15 +12,16 @@ public class While22 {
         boolean ehPrimo = true;
 
         do {
-            for (int i = 1; i <= 10; i++){
-                if (num % cont == 0){
+            for (int i = 1; i <= 10; i++) {
+                if (num % cont == 0) {
                     ehPrimo = false;
                     break;
                 }
                 cont++;
-            }while(cont < num/2);
-
+            }
             if (ehPrimo && num > 1){
+                System.out.println(num);
+            }{
                 System.out.println(num);
             }
         }while(true);
