@@ -11,6 +11,6 @@ public class CondTern10 {
 
         sc.close();
 
-        System.out.println((num > 100)?"Alto":"Baixo");
+        System.out.println((num > 100)?"\nAlto":"\nBaixo");
     }
 }
