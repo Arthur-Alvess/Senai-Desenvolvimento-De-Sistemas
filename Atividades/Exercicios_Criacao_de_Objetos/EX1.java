@@ -9,16 +9,20 @@ public class EX1 {
         sc.useLocale(Locale.US);
 
         System.out.println("----Matemática----");
+
         System.out.print("\nInforme sua nota do 1º Semestre: ");
         double nota1Mat = sc.nextDouble();
+
         System.out.print("\nInforme sua nota do 2º Semestre: ");
         double nota2Mat = sc.nextDouble();
 
         double mediaMat = calculoMedia(nota1Mat, nota2Mat);
 
         System.out.println("\n----Português----");
+
         System.out.print("\nInforme sua nota do 1º Semestre: ");
         double nota1Port = sc.nextDouble();
+
         System.out.print("\nInforme sua nota do 2º Semestre: ");
         double nota2Port = sc.nextDouble();
 
@@ -26,7 +30,7 @@ public class EX1 {
 
         String resultado = showResult(mediaMat, mediaPort);
 
-        System.out.println(showResult(mediaMat, mediaPort));
+        System.out.println(resultado);
     }
 
     public static double calculoMedia(double a, double b){
