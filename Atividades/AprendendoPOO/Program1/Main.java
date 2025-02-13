@@ -41,18 +41,18 @@ public class Main {
                     case 1:
 
                         System.out.print("Informe o nome do livro: ");
-                        String nomeLivro = sc.nextLine();
+                        String nomeLivroadd = sc.nextLine();
 
                         System.out.print("Informe o ano de lançamento do livro: ");
-                        int anoLivro = sc.nextInt();
+                        int anoLivroadd = sc.nextInt();
 
                         System.out.print("Informe o autor do livro: ");
-                        String autorLivro = sc.nextLine();
+                        String autorLivroadd = sc.nextLine();
 
                         System.out.print("Informe a quantidade de livros: ");
-                        int quantLivro = sc.nextInt();
+                        int quantLivroadd = sc.nextInt();
 
-                        Livros livro = new Livros(nomeLivro, anoLivro, autorLivro);
+                        Livros livro = new Livros(nomeLivroadd, anoLivroadd, autorLivroadd);
 
 
                     case 2:
@@ -64,4 +64,19 @@ public class Main {
         }
         sc.close();
     }
+}
+
+public static Livros(Scanner sc){
+    System.out.print("Informe o nome do livro: ");
+    String nomeLivroadd = sc.nextLine();
+
+    System.out.print("Informe o ano de lançamento do livro: ");
+    int anoLivroadd = sc.nextInt();
+    sc.nextLine();
+
+    System.out.print("Informe o autor do livro: ");
+    String autorLivroadd = sc.nextLine();
+
+    System.out.print("Informe a quantidade de livros: ");
+    int quantLivroadd = sc.nextInt();
 }
