@@ -1,5 +1,7 @@
 package AprendendoPOO.Program1;
 
+import AprendendoPOO.Program1.Models.Livros;
+
 import java.util.Scanner;
 
 public class Main {
@@ -38,7 +40,25 @@ public class Main {
                 switch (chose2){
                     case 1:
 
+                        System.out.print("Informe o nome do livro: ");
+                        String nomeLivro = sc.nextLine();
+
+                        System.out.print("Informe o ano de lançamento do livro: ");
+                        int anoLivro = sc.nextInt();
+
+                        System.out.print("Informe o autor do livro: ");
+                        String autorLivro = sc.nextLine();
+
+                        System.out.print("Informe a quantidade de livros: ");
+                        int quantLivro = sc.nextInt();
+
+                        Livros livro = new Livros(nomeLivro, anoLivro, autorLivro);
+
+
                     case 2:
+
+                        System.out.print("Informe o nome do livro: ");
+                        String nomeLivro = sc.nextLine();
 
                 }
         }
