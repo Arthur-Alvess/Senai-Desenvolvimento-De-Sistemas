@@ -14,6 +14,7 @@ public class EX3 {
         double tempF = conversorTemperaturaParaF(tempC);
 
         System.out.println(tempF);
+        sc.close();
     }
 
     public static double conversorTemperaturaParaF(double a){

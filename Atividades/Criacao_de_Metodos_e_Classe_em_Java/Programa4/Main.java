@@ -14,5 +14,6 @@ public class Main {
         Numeros num = new Numeros(num1, num2);
 
         System.out.println(num.verificadorMaiorQueODobro(num1, num2));
+        sc.close();
     }
 }

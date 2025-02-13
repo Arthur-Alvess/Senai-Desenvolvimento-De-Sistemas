@@ -15,6 +15,7 @@ public class Main {
         Placas placa = new Placas(finalPlaca);
 
         System.out.println(placa.verificadorParOuImpar(finalPlaca));
+        sc.close();
 
     }
 }

@@ -16,5 +16,6 @@ public class Main {
         Doacao doacao = new Doacao(idade, peso);
 
         System.out.println(doacao.verificadorPodeDoar(idade, peso));
+        sc.close();
     }
 }

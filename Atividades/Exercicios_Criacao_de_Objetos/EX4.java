@@ -12,6 +12,7 @@ public class EX4 {
         String tam = verificador5ouMaiscaracteres(palavra);
 
         System.out.println(tam);
+        sc.close();
     }
 
     public static String verificador5ouMaiscaracteres(String a){

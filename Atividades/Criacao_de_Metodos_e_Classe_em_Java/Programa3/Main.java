@@ -14,5 +14,6 @@ public class Main {
         Alturas altura = new Alturas(h);
 
         System.out.println(altura.classificacaoAltura(h));
+        sc.close();
     }
 }

@@ -28,6 +28,7 @@ public class Main {
         Triangulo TrianguloY = new Triangulo(Ya,Yb,Yc);
 
         System.out.println(VerificarMaior(TrianguloX, TrianguloY));
+        sc.close();
 
     }
 

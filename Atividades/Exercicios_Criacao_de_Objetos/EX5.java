@@ -12,6 +12,7 @@ public class EX5 {
         String tipo = verificadorClassificacao(classificacao);
 
         System.out.println(tipo);
+        sc.close();
     }
 
     public static String verificadorClassificacao(int a){
