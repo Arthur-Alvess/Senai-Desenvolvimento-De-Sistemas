@@ -15,8 +15,7 @@ public class Main {
 
         Nota notas = new Nota(nota1, nota2, nota3);
 
-        System.out.println("\n" + notas.verificadorMaior(nota1, nota2, nota3));
-        System.out.println(notas.verificadorMenor(nota1, nota2, nota3));
+        notas.showResult();
 
         sc.close();
     }
