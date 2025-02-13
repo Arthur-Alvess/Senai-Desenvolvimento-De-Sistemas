@@ -31,6 +31,7 @@ public class EX1 {
         String resultado = showResult(mediaMat, mediaPort);
 
         System.out.println(resultado);
+        sc.close();
     }
 
     public static double calculoMedia(double a, double b){

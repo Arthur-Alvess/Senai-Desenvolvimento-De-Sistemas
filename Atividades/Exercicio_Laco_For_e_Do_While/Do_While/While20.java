@@ -15,5 +15,7 @@ public class While20 {
             tent = sc.nextLine();
 
         }while(!tent.equals(senhacorreta));
+
+        sc.close();
     }
 }

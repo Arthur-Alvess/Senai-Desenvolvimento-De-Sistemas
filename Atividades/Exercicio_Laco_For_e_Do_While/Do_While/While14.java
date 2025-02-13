@@ -18,5 +18,7 @@ public class While14 {
             }
             cont++;
         }while(cont <= num);
+
+        sc.close();
     }
 }

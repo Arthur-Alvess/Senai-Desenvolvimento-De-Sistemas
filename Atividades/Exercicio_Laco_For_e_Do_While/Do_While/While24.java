@@ -21,5 +21,7 @@ public class While24 {
                 System.out.print("Raiz Qaudrada: " + Math.sqrt(num) + "\n");
             }
         }while(num >= 0);
+
+        sc.close();
     }
 }

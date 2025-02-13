@@ -8,14 +8,14 @@ public class While15 {
 
         System.out.print("Informe até que número a Sequencia de Fibonacci deve ir: ");
         int num = sc.nextInt();
-        int a = 0, b = 1, cont = 0;
+        int a = 0, b = 1;
 
         do {
             System.out.print(a+ " ");
             int proximo = a+b;
             a=b;
             b=proximo;
-            cont++;
         }while(a < num);
+        sc.close();
     }
 }

@@ -2,13 +2,19 @@ package Exercicio_Laco_For_e_Do_While.Do_While;
 
 public class While25 {
     public static void main(String[] args) {
-        int num = 1;
-        int cont = 1;
-        int linhas = 1;
+        int base = 5; 
+        int i = 1;  
 
         do {
-            System.out.println(num);
-        }while(linhas <=5);
+            int j = 1;
+            do {
+                System.out.print(j + " ");
+                j++;
+            } while (j <= i); 
+
+            System.out.println(); 
+            i++; 
+        } while (i <= base);
 
     }
 }

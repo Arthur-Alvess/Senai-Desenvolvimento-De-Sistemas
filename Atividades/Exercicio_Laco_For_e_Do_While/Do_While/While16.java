@@ -14,5 +14,7 @@ public class While16 {
             System.out.printf("\n%d x %d = %d", num,cont,num*cont);
             cont++;
         }while(cont <=10);
+
+        sc.close();
     }
 }

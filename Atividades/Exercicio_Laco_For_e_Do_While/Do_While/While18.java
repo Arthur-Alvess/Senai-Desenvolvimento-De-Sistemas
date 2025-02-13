@@ -20,5 +20,7 @@ public class While18 {
                 System.out.println(num + " é ímpar!");
             }
         }while(num != 0);
+
+        sc.close();
     }
 }
