@@ -11,7 +11,7 @@ public class Maior {
         this.c = c;
     }
 
-    public int verificadorMaior(){
+    private int verificadorMaior(){
         int maior;
 
         if (a>b && a>c) {

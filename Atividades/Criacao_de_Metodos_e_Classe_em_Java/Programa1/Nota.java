@@ -11,7 +11,7 @@ public class Nota {
         this.nota3 = nota3;
     }
 
-    public double verificadorMaior (){
+    private double verificadorMaior (){
         double maior;
         if (nota1 > nota2 && nota1 > nota3){
             maior = nota1;
@@ -24,7 +24,7 @@ public class Nota {
         return maior;
     }
 
-    public double verificadorMenor (){
+    private double verificadorMenor (){
         double menor;
         if (nota1 < nota2 && nota1 < nota3){
             menor = nota1;
