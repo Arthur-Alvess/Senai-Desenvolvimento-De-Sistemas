@@ -1,7 +1,7 @@
 package Criacao_de_Metodos_e_Classe_em_Java.Programa2;
 
 public class Placas {
-    public int finalPlaca;
+    private int finalPlaca;
 
     public Placas(int finalPlaca){
         this.finalPlaca = finalPlaca;

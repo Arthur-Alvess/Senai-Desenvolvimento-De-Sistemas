@@ -1,8 +1,8 @@
 package Criacao_de_Metodos_e_Classe_em_Java.Programa5;
 
 public class Doacao {
-    public int idade;
-    public double peso;
+    private int idade;
+    private double peso;
 
     public Doacao (int idade, double peso){
         this.idade = idade;

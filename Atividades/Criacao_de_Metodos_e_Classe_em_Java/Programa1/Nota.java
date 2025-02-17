@@ -1,9 +1,9 @@
 package Criacao_de_Metodos_e_Classe_em_Java.Programa1;
 
 public class Nota {
-    public double nota1;
-    public double nota2;
-    public double nota3;
+    private double nota1;
+    private double nota2;
+    private double nota3;
 
     public Nota(double nota1, double nota2, double nota3){
         this.nota1 = nota1;
