@@ -1,6 +1,5 @@
 package AtividadeENUM;
 
-
 import AtividadeENUM.entities.Produto;
 import AtividadeENUM.entities.StatusPedido;
 
@@ -17,7 +16,6 @@ public class Main {
         Produto produto3  = new Produto(103, "Chinelo Kenner", 199.90);
         Produto produto4  = new Produto(104, "Óculos de Sol", 129.90);
 
-
         System.out.println("-------------------------Produtos em Estoque-------------------------");
 
         System.out.println(produto1);
@@ -28,42 +26,55 @@ public class Main {
         System.out.println("---------------------------------------------------------------------");
         System.out.print("\nInforme o ID do produto que deseja adquirir: ");
         int escolha = sc.nextInt();
+        sc.nextLine();  // Consome o caractere de nova linha após nextInt()
 
-        StatusPedido statusPedido2 = StatusPedido.Preparando;
-        StatusPedido statusPedido3 = StatusPedido.Em_Deslocamento;
-        StatusPedido statusPedido4 = StatusPedido.Finalizado;
+        StatusPedido statusPedido1 = StatusPedido.Aguardando_Pagamento;
 
-        switch (escolha){
+        switch (escolha) {
             case 101:
-                StatusPedido statusPedido1 = StatusPedido.Aguardando_Pagamento;
-
-                System.out.println("\nCarrinho: \n" + produto1 + "\nStatus: "+ statusPedido1);
-
+                System.out.println("\nCarrinho: \n" + produto1 + "\nStatus: " + statusPedido1);
                 break;
 
             case 102:
-                StatusPedido statusPedido5 = StatusPedido.Aguardando_Pagamento;
-
-                System.out.println("\nCarrinho: \n" + produto2 + "\nStatus: "+ statusPedido5);
+                System.out.println("\nCarrinho: \n" + produto2 + "\nStatus: " + statusPedido1);
                 break;
 
             case 103:
-                StatusPedido statusPedido6 = StatusPedido.Aguardando_Pagamento;
-
-                System.out.println("\nCarrinho: \n" + produto3 + "\nStatus: "+ statusPedido6);
+                System.out.println("\nCarrinho: \n" + produto3 + "\nStatus: " + statusPedido1);
                 break;
 
             case 104:
-                StatusPedido statusPedido7 = StatusPedido.Aguardando_Pagamento;
+                System.out.println("\nCarrinho: \n" + produto4 + "\nStatus: " + statusPedido1);
+                break;
 
-                System.out.println("\nCarrinho: \n" + produto4 + "\nStatus: "+ statusPedido7);
+            default:
+                System.out.println("ID informado não encontrado!");
                 break;
         }
 
+        System.out.println("\nDeseja verificar o status de outro pedido?(S/N)");
+        String desejo = sc.nextLine().toLowerCase();
 
-        System.out.println("\nStatus dos outros pedidos: ");
-        System.out.println("\nSapato social: " + statusPedido2);
-        System.out.println("Notebook Gamer: " + statusPedido3);
-        System.out.println("Mouse Gamer: " + statusPedido4);
+        if (desejo.charAt(0) == 's') {
+            System.out.println("\nInforme o ID do produto: ");
+            int numeroID = sc.nextInt();
+            sc.nextLine();
+
+            switch (numeroID) {
+                case 110:
+                    System.out.println("\nSapato social: " + StatusPedido.Preparando);
+                    break;
+                case 111:
+                    System.out.println("\nNotebook Gamer: " + StatusPedido.Em_Deslocamento);
+                    break;
+                case 112:
+                    System.out.println("\nMouse Gamer: " + StatusPedido.Finalizado);
+                    break;
+                default:
+                    System.out.println("Produto não encontrado!");
+                    break;
+            }
+        }
+        sc.close();
     }
 }

@@ -16,20 +16,12 @@ public class Triangulo {
         return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
 
-    public static String VerificarMaior(Triangulo TrianguloX, Triangulo TrianguloY){
+    public static void VerificarMaior(Triangulo TrianguloX, Triangulo TrianguloY){
         System.out.println("Área Triângulo X: " + TrianguloX.area());
         System.out.println("Área Triângulo Y: " + TrianguloY.area());
 
-        String maior;
+        System.out.println((TrianguloX.area() > TrianguloY.area())? "O triângulo com maior área é o triângulo X!":(TrianguloY.area() > TrianguloX.area())? "O triângulo com maior área é o triângulo Y!" : "A área dos dois triângulos são iguais!");
 
-        if (TrianguloX.area() > TrianguloY.area()){
-            maior = "O triângulo com maior área é o triângulo X!";
-        } else if (TrianguloY.area() > TrianguloX.area()){
-            maior = "O triângulo com maior área é o triângulo Y!";
-        } else {
-            maior = "A área dos dois triângulos são iguais!";
-        }
-        return maior;
     }
 
 }
