@@ -20,7 +20,7 @@ public class Triangulo {
         System.out.println("Área Triângulo X: " + TrianguloX.area());
         System.out.println("Área Triângulo Y: " + TrianguloY.area());
 
-        System.out.println((TrianguloX.area() > TrianguloY.area())? "O triângulo com maior área é o triângulo X!":(TrianguloY.area() > TrianguloX.area())? "O triângulo com maior área é o triângulo Y!" : "A área dos dois triângulos são iguais!");
+        System.out.println((TrianguloX.area() > TrianguloY.area())? "O triângulo com MAIOR área é o triângulo X!":(TrianguloY.area() > TrianguloX.area())? "O triângulo com maior área é o triângulo Y!" : "A área dos dois triângulos são iguais!");
 
     }
 
