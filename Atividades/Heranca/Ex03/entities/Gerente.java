@@ -2,12 +2,12 @@ package Heranca.Ex03.entities;
 
 public class Gerente extends Funcionario{
 
-    public Gerente(String nome, double salarioBase) {
+    public Gerente(String nome, float salarioBase) {
         super(nome, salarioBase);
     }
 
     @Override
-    public double calcularSalario(double salarioBase){
+    public float calcularSalario(float salarioBase){
         salarioBase += 500;
         return salarioBase;
     }
