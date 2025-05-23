@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atividade HTML</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1 fs-2 mx-auto">Meu Site</span>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h2 class="mb-4">Formulário de Cadastro</h2>
+    <form id="formCadastro" class="card p-3" method="get">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" placeholder="Digite o nome" />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" placeholder="Digite o e-mail" />
+      </div>
+      <button type="submit" class="btn btn-primary">Adicionar</button>
+    </form>
+
+    <h2 class="mt-5 mb-3">Tabela de Cadastros</h2>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaCorpo">
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    document.getElementById('formCadastro').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      if (nome === '' || email === '') {
+        alert("Por favor, preencha todos os campos.");
+        return;
+      }
+
+      // 🟡 Mudado para usar o tbody pelo id direto, mais seguro e direto
+      const tabela = document.getElementById('tabelaCorpo');
+      const novaLinha = document.createElement('tr');
+
+      novaLinha.innerHTML = `
+        <td>${nome}</td>
+        <td>${email}</td>
+        <td>
+          <button class="btn btn-sm btn-danger" onclick="removerLinha(this)">Remover</button>
+        </td>
+      `;
+
+      tabela.appendChild(novaLinha);
+      this.reset();
+    });
+
+    function removerLinha(botao) {
+      const linha = botao.closest('tr');
+      linha.remove();
+    }
+  </script>
+</body>
+</html>
