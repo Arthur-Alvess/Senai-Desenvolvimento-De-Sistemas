@@ -42,73 +42,117 @@
     </table>
   </div>
 
+  
+
   <script>
-  const apiUrl = 'http://localhost:8080/api/alunos';
+    const apiUrl = 'http://localhost:8080/api/alunos';
+    let alunoEmEdicaoId = null;
 
-  window.onload = () => {
-    fetch(apiUrl)
-      .then(res => res.json())
-      .then(data => {
-        data.forEach(aluno => adicionarLinhaNaTabela(aluno));
-      })
-      .catch(err => console.error('Erro ao listar alunos:', err));
-  };
+    window.onload = () => {
+      fetch(apiUrl)
+        .then(res => res.json())
+        .then(data => {
+          data.forEach(aluno => adicionarLinhaNaTabela(aluno));
+        })
+        .catch(err => console.error('Erro ao listar alunos:', err));
+    };
 
-  document.getElementById('formCadastro').addEventListener('submit', function(e) {
-    e.preventDefault();
+    document.getElementById('formCadastro').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    const nome = document.getElementById('nome').value.trim();
-    const email = document.getElementById('email').value.trim();
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
 
-    if (!nome || !email) {
-      alert("Por favor, preencha todos os campos.");
-      return;
+      if (!nome || !email) {
+        alert("Por favor, preencha todos os campos.");
+        return;
+      }
+
+      const aluno = { nome, email };
+
+      if (alunoEmEdicaoId) {
+        fetch(`${apiUrl}/${alunoEmEdicaoId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(aluno)
+        })
+        .then(res => res.json())
+        .then(alunoAtualizado => {
+          atualizarLinhaNaTabela(alunoAtualizado);
+          resetarFormulario();
+        })
+        .catch(err => console.error('Erro ao editar aluno:', err));
+      } else {
+        
+        fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(aluno)
+        })
+        .then(res => res.json())
+        .then(alunoCriado => {
+          adicionarLinhaNaTabela(alunoCriado);
+          document.getElementById('formCadastro').reset();
+        })
+        .catch(err => console.error('Erro ao cadastrar aluno:', err));
+      }
+    });
+
+    function adicionarLinhaNaTabela(aluno) {
+      const tabela = document.getElementById('tabelaCorpo');
+      const novaLinha = document.createElement('tr');
+      novaLinha.setAttribute('data-id', aluno.id);
+
+      novaLinha.innerHTML = `
+        <td>${aluno.nome}</td>
+        <td>${aluno.email}</td>
+        <td>
+          <button class="btn btn-sm btn-warning me-2" onclick="editarAluno(${aluno.id}, this)">Editar</button>
+          <button class="btn btn-sm btn-danger" onclick="removerAluno(${aluno.id}, this)">Remover</button>
+        </td>
+      `;
+
+      tabela.appendChild(novaLinha);
     }
 
-    const aluno = { nome, email };
+    function atualizarLinhaNaTabela(alunoAtualizado) {
+      const linha = document.querySelector(`tr[data-id="${alunoAtualizado.id}"]`);
+      if (linha) {
+        linha.children[0].textContent = alunoAtualizado.nome;
+        linha.children[1].textContent = alunoAtualizado.email;
+      }
+    }
 
-    fetch(apiUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(aluno)
-    })
-    .then(res => res.json())
-    .then(alunoCriado => {
-      adicionarLinhaNaTabela(alunoCriado);
+    function editarAluno(id, botao) {
+      const linha = botao.closest('tr');
+      const nome = linha.children[0].textContent;
+      const email = linha.children[1].textContent;
+
+      document.getElementById('nome').value = nome;
+      document.getElementById('email').value = email;
+
+      alunoEmEdicaoId = id;
+      document.querySelector('#formCadastro button[type="submit"]').textContent = 'Salvar Alterações';
+    }
+
+    function resetarFormulario() {
       document.getElementById('formCadastro').reset();
-    })
-    .catch(err => console.error('Erro ao cadastrar aluno:', err));
-  });
+      alunoEmEdicaoId = null;
+      document.querySelector('#formCadastro button[type="submit"]').textContent = 'Adicionar';
+    }
 
-  function adicionarLinhaNaTabela(aluno) {
-    const tabela = document.getElementById('tabelaCorpo');
-    const novaLinha = document.createElement('tr');
-    novaLinha.setAttribute('data-id', aluno.id);
-
-    novaLinha.innerHTML = `
-      <td>${aluno.nome}</td>
-      <td>${aluno.email}</td>
-      <td>
-        <button class="btn btn-sm btn-danger" onclick="removerAluno(${aluno.id}, this)">Remover</button>
-      </td>
-    `;
-
-    tabela.appendChild(novaLinha);
-  }
-
-  function removerAluno(id, botao) {
-    fetch(`${apiUrl}/${id}`, { method: 'DELETE' })
-      .then(res => {
-        if (res.status === 204) {
-          const linha = botao.closest('tr');
-          linha.remove();
-        } else {
-          alert("Erro ao remover aluno.");
-        }
-      })
-      .catch(err => console.error('Erro ao remover aluno:', err));
-  }
-</script>
-
+    function removerAluno(id, botao) {
+      fetch(`${apiUrl}/${id}`, { method: 'DELETE' })
+        .then(res => {
+          if (res.status === 204) {
+            const linha = botao.closest('tr');
+            linha.remove();
+          } else {
+            alert("Erro ao remover aluno.");
+          }
+        })
+        .catch(err => console.error('Erro ao remover aluno:', err));
+    }
+  </script>
 </body>
 </html>

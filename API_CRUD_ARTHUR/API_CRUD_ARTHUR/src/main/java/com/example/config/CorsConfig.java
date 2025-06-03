@@ -1,4 +1,4 @@
-package com.example.config; // ajuste se seu package raiz for diferente
+package com.example.Config; // ajuste se seu package raiz for diferente
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,8 +13,9 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:5500") // ou "*", mas isso é menos seguro
-                        .allowedMethods("GET", "POST", "PUT", "DELETE");
+                        .allowedOrigins("http://localhost:5500", "http://127.0.0.1:5500") // ou "*", mas isso é menos seguro
+                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+                        .allowedHeaders("*");
             }
         };
     }
