@@ -1,0 +1,39 @@
+body {
+      background-image: url(../imagens/marek-piwnicki-NLiKKKr3IbU-unsplash.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.6); /* fundo preto translúcido */
+      color: white;
+      border: none;
+    }
+
+    .form-control {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid #ccc;
+      color: white;
+    }
+
+    .form-control::placeholder {
+      color: #ddd;
+    }
+
+    .form-control:focus {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    .form-text {
+      color: #ff6b6b;
+    }
+
+    a {
+      color: #ccc;
+    }
+
+    a:hover {
+      color: white;
+    }
