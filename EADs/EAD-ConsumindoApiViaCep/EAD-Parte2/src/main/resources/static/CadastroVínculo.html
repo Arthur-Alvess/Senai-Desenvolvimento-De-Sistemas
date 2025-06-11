@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Vínculo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1030;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="bg-dark py-3 shadow">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h3 class="text-white m-0">Sistema RH</h3>
+        <nav>
+        <a href="index.html" class="btn btn-light me-2">Início</a>
+        <a href="funcionarios.html" class="btn btn-light me-2">Funcionários</a>
+        <a href="GestaoCargos.html" class="btn btn-light me-2">Cargos</a>
+        <a href="CadastroVínculo.html" class="btn btn-light">Vínculos</a>
+        </nav>
+    </div>
+  </header>
+
+  <div class="container mt-5">
+    <h2>Cadastro de Vínculo</h2>
+    <form id="formVinculo" class="card p-3">
+      <div class="mb-3">
+        <label for="funcionario" class="form-label">Funcionário</label>
+        <select id="funcionario" class="form-select" required></select>
+      </div>
+      <div class="mb-3">
+        <label for="cargo" class="form-label">Cargo</label>
+        <select id="cargo" class="form-select" required></select>
+      </div>
+      <div class="mb-3">
+        <label for="dataInicio" class="form-label">Data de Início</label>
+        <input type="date" id="dataInicio" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="dataFim" class="form-label">Data de Fim</label>
+        <input type="date" id="dataFim" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="detalhes" class="form-label">Detalhes</label>
+        <textarea id="detalhes" class="form-control"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+  </div>
+
+  <script>
+    const apiBase = 'http://localhost:8080/funcionariosPorCargo';
+
+    async function carregarSelects() {
+      const funcionarios = await fetch(`${apiBase}/funcionarios`).then(res => res.json());
+      const cargos = await fetch(`${apiBase}/cargos`).then(res => res.json());
+
+      const selFuncionario = document.getElementById('funcionario');
+      const selCargo = document.getElementById('cargo');
+
+      funcionarios.forEach(f => {
+        selFuncionario.innerHTML += `<option value="${f.id}">${f.nome}</option>`;
+      });
+
+      cargos.forEach(c => {
+        selCargo.innerHTML += `<option value="${c.id}">${c.nome}</option>`;
+      });
+    }
+
+    document.getElementById('formVinculo').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const vinculo = {
+        funcionario: { id: document.getElementById('funcionario').value },
+        cargo: { id: document.getElementById('cargo').value },
+        dataInicio: document.getElementById('dataInicio').value,
+        dataFim: document.getElementById('dataFim').value || null,
+        detalhes: document.getElementById('detalhes').value
+      };
+
+      const res = await fetch(`${apiBase}/funcionarios-por-cargo`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(vinculo)
+      });
+
+      if (res.ok) {
+        alert('Vínculo cadastrado com sucesso!');
+        document.getElementById('formVinculo').reset();
+      } else {
+        alert('Erro ao salvar vínculo.');
+      }
+    });
+
+    window.onload = carregarSelects;
+  </script>
+</body>
+</html>

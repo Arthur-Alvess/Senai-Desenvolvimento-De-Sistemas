@@ -3,6 +3,12 @@ body {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      padding-top: 70px;
+    }
+
+    h2{
+      color: white;
+      -webkit-text-stroke: black 0.7px;
     }
 
     .card {

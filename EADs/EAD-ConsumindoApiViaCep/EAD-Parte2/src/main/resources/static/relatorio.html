@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório de Vínculos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1030;
+    }
+  </style>
+</head>
+<body class="container mt-5">
+  
+  <header class="bg-dark py-3 shadow">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h3 class="text-white m-0">Sistema RH</h3>
+        <nav>
+        <a href="index.html" class="btn btn-light me-2">Início</a>
+        <a href="funcionarios.html" class="btn btn-light me-2">Funcionários</a>
+        <a href="GestaoCargos.html" class="btn btn-light me-2">Cargos</a>
+        <a href="CadastroVínculo.html" class="btn btn-light">Vínculos</a>
+        </nav>
+    </div>
+  </header>
+    
+  <h2>Relatório de Vínculos</h2>
+
+  <form id="filtroForm" class="row g-3 mb-4">
+    <div class="col-md-6">
+      <label for="filtroFuncionario" class="form-label">Filtrar por Funcionário</label>
+      <select id="filtroFuncionario" class="form-select">
+        <option value="">-- Todos --</option>
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label for="filtroCargo" class="form-label">Filtrar por Cargo</label>
+      <select id="filtroCargo" class="form-select">
+        <option value="">-- Todos --</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+  </form>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Funcionário</th>
+        <th>Cargo</th>
+        <th>Data Início</th>
+        <th>Data Fim</th>
+        <th>Detalhes</th>
+      </tr>
+    </thead>
+    <tbody id="tabelaVinculos">
+    </tbody>
+  </table>
+
+  <script>
+    const baseUrl = "http://localhost:8080";
+
+    async function carregarFiltros() {
+      const [funcionarios, cargos] = await Promise.all([
+        fetch(`${baseUrl}/funcionarios`).then(r => r.json()),
+        fetch(`${baseUrl}/cargos`).then(r => r.json())
+      ]);
+
+      funcionarios.forEach(f => {
+        filtroFuncionario.innerHTML += `<option value="${f.id}">${f.nome}</option>`;
+      });
+
+      cargos.forEach(c => {
+        filtroCargo.innerHTML += `<option value="${c.id}">${c.nome}</option>`;
+      });
+    }
+
+    async function buscarVinculos() {
+      let url = `${baseUrl}/funcionariosPorCargo`;
+      const funcionarioId = filtroFuncionario.value;
+      const cargoId = filtroCargo.value;
+
+      if (funcionarioId) {
+        url += `?funcionarioId=${funcionarioId}`;
+      } else if (cargoId) {
+        url += `?cargoId=${cargoId}`;
+      }
+
+      const dados = await fetch(url).then(r => r.json());
+      const tbody = document.getElementById("tabelaVinculos");
+      tbody.innerHTML = "";
+
+      dados.forEach(v => {
+        tbody.innerHTML += `
+          <tr>
+            <td>${v.funcionario?.nome || ''}</td>
+            <td>${v.cargo?.nome || ''}</td>
+            <td>${v.dataInicio}</td>
+            <td>${v.dataFim || ''}</td>
+            <td>${v.detalhes || ''}</td>
+          </tr>
+        `;
+      });
+    }
+
+    document.getElementById("filtroForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      buscarVinculos();
+    });
+
+    window.onload = async () => {
+      await carregarFiltros();
+      buscarVinculos();
+    };
+  </script>
+</body>
+</html>
