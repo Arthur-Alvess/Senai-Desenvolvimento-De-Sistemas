@@ -23,8 +23,9 @@
         <nav>
         <a href="index.html" class="btn btn-light me-2">Início</a>
         <a href="funcionarios.html" class="btn btn-light me-2">Funcionários</a>
-        <a href="GestaoCargos.html" class="btn btn-light me-2">Cargos</a>
+        <a href="cargos.html" class="btn btn-light me-2">Cargos</a>
         <a href="CadastroVínculo.html" class="btn btn-light">Vínculos</a>
+        <a href="relatorio.html" class="btn btn-light">Relatórios</a>
         </nav>
     </div>
   </header>
@@ -60,8 +61,8 @@
     const apiBase = 'http://localhost:8080/funcionariosPorCargo';
 
     async function carregarSelects() {
-      const funcionarios = await fetch(`${apiBase}/funcionarios`).then(res => res.json());
-      const cargos = await fetch(`${apiBase}/cargos`).then(res => res.json());
+      const funcionarios = await fetch('http://localhost:8080/funcionarios').then(res => res.json());
+      const cargos = await fetch('http://localhost:8080/cargos').then(res => res.json());
 
       const selFuncionario = document.getElementById('funcionario');
       const selCargo = document.getElementById('cargo');
@@ -86,7 +87,7 @@
         detalhes: document.getElementById('detalhes').value
       };
 
-      const res = await fetch(`${apiBase}/funcionarios-por-cargo`, {
+      const res = await fetch(apiBase, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(vinculo)
